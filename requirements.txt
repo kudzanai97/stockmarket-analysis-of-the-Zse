@@ -44,7 +44,7 @@ mkl-service==2.4.0
 mpmath==1.2.1
 munkres==1.1.4
 mypy-extensions==0.4.3
-navigator-updater==0.2.1
+#navigator-updater==0.2.1
 nltk==3.6.5
 oauthlib==3.2.0
 opencv-python==4.5.1.48
@@ -65,7 +65,6 @@ pyls-spyder==0.4.0
 Pympler==1.0.1
 pyodbc===4.0.0-unsupported
 pyreadline==2.1
-pytesseract==0.3.7
 pytest==6.2.4
 python-dateutil==2.8.2
 python-lsp-jsonrpc==1.0.0
