@@ -57,7 +57,7 @@ ply==3.11
 protobuf==3.20.1
 pyarrow==7.0.0
 pycosat==0.6.3
-pycurl==7.44.1
+#pycurl==7.44.1
 pydeck==0.7.1
 pyls-spyder==0.4.0
 Pympler==1.0.1
