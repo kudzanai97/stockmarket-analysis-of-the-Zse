@@ -102,7 +102,7 @@ with st.form(key="my_form",clear_on_submit= True):
             plt.legend()
             st.pyplot(fig)
         with st.container():
-             leftC1, rightC1 = st.columns(2)
+            leftC1, rightC1 = st.columns(2)
             
             score= 0
             st.header('FUNDAMENTAL ANALYSIS (The Piotroski f-score)')
