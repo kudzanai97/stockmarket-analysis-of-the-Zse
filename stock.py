@@ -41,7 +41,7 @@ with st.form(key="my_form",clear_on_submit= True):
                     df = inv.get_stock_historical_data(stock=userInput,
                                                 country="Zimbabwe",
                                                 from_date="01/01/2019",
-                                                to_date="05/05/2022")
+                                                to_date="18/05/2022")
 
                     
                     ku = inv.get_stock_historical_data(stock=userInput,
@@ -101,175 +101,180 @@ with st.form(key="my_form",clear_on_submit= True):
             plt.ylabel('price')
             plt.legend()
             st.pyplot(fig)
-        score= 0
-        st.header('FUNDAMENTAL ANALYSIS (The Piotroski f-score)')
-        st.write("##")
-        st.write("The Piotroski score is a discrete score between zero and nine that reflects nine criteria used to determine the strength of a firm's financial position. The Piotroski score is used to determine the best value stocks, with nine being the best and zero being the worst")
-        st.write("data supplied by Tanaka Chabara a financial enthusiastic")
-        st.write("##")
-        if userInput=="ECO":
-            st.subheader("The company has the Piotroski score of 8")
-            score= 8
-        elif userInput== "OKZ":
-            st.subheader("The company has the Piotroski score of 4")
-            score=4
-        elif userInput== "ASUN":
-            st.subheader("The company has the Piotroski score of 3")
-            score= 3
-        elif userInput== "AFDS":
-            st.subheader("The company has the Piotroski score of 5")
-            score=5
-        elif userInput== "BAT":
-            st.subheader("The company has the Piotroski score of 8")
-            score=8
-        elif userInput== "BRDR":
-            st.subheader("The company has the Piotroski score of 2")
-            score=2
-        elif userInput== "CAFCA":
-            st.subheader("The company has the Piotroski score of 7")
-            score=7
-        elif userInput== "CBZ":
-            st.subheader("The company has the Piotroski score of 6")
-            score=6
-        elif userInput== "DLTA":
-            st.subheader("The company has the Piotroski score of 8")
-            score=8
-        elif userInput== "EDGR":
-            st.subheader("The company has the Piotroski score of 3")
-            score=3
-        elif userInput== "FBC":
-            st.subheader("The company has the Piotroski score of 4")
-            score=4
-        elif userInput== "GBZW":
-            st.subheader("The company has the Piotroski score of 1")
-            score=1
-        elif userInput== "HIPO":
-            st.subheader("The company has the Piotroski score of 7")
-            score=7
-        elif userInput== "INN":
-            st.subheader("The company has the Piotroski score of 8")
-            score=8
-        elif userInput== "LACZ":
-            st.subheader("The company has the Piotroski score of 5")
-            score=5
-        elif userInput== "MASH":
-            st.subheader("The company has the Piotroski score of 6")
-            score=6
-        elif userInput== "MSHL":
-            st.subheader("The company has the Piotroski score of 3")
-            score=3
-        elif userInput== "NPKZ":
-            st.subheader("The company has the Piotroski score of 3")
-            score=3
-        elif userInput== "RIOZ":
-            st.subheader("The company has the Piotroski score of 5")
-            score=5
-        elif userInput== "SEED":
-            st.subheader("The company has the Piotroski score of 6")
-            score=6
-        elif userInput== "SIM":
-            st.subheader("The company has the Piotroski score of 6")
-            score=6
-        elif userInput== "TANG":
-            st.subheader("The company has the Piotroski score of 7")
-            score=7
-        elif userInput== "TRUW":
-            st.subheader("The company has the Piotroski score of 3")
-            score=3
-        elif userInput== "TSL":
-            st.subheader("The company has the Piotroski score of 4")
-            score=4
-        elif userInput== "UNIF":
-            st.subheader("The company has the Piotroski score of 5")
-            score=5
-        elif userInput== "ZIMP":
-            st.subheader("The company has the Piotroski score of 3")
-            score=3
-        elif userInput== "ZIMW":
-            st.subheader("The company has the Piotroski score of 5")
-            score=5
-        elif userInput== "SACL":
-            st.subheader("The company has the Piotroski score of 3")
-            score=3
-        elif userInput== "RTG":
-            st.subheader("The company has the Piotroski score of 5")
-            score=5
-        elif userInput== "OMU":
-            st.subheader("The company has the Piotroski score of 5")
-            score=5
-        elif userInput== "NTS":
-            st.subheader("The company has the Piotroski score of 6")
-            score=6
-        elif userInput== "NTFD":
-            st.subheader("The company has the Piotroski score of 6")
-            score=6
-        elif userInput== "DZL":
-            st.subheader("The company has the Piotroski score of 5")
-            score=5
-        elif userInput== "EHZL":
-            st.subheader("The company has the Piotroski score of 6")
-            score=6
-        else:
-            st.subheader("Not enough data ")
-            score= 10
+        with st.container():
+             leftC1, rightC1 = st.columns(2)
+            
+            score= 0
+            st.header('FUNDAMENTAL ANALYSIS (The Piotroski f-score)')
+        
+            st.write("The Piotroski score is a discrete score between zero and nine that reflects nine criteria used to determine the strength of a firm's financial position. The Piotroski score is used to determine the best value stocks, with nine being the best and zero being the worst")
+            if userInput=="ECO":
+                st.subheader("The company has the Piotroski score of 8")
+                score= 8
+            elif userInput== "OKZ":
+                st.subheader("The company has the Piotroski score of 4")
+                score=4
+            elif userInput== "ASUN":
+                st.subheader("The company has the Piotroski score of 3")
+                score= 3
+            elif userInput== "AFDS":
+                st.subheader("The company has the Piotroski score of 5")
+                score=5
+            elif userInput== "BAT":
+                st.subheader("The company has the Piotroski score of 8")
+                score=8
+            elif userInput== "BRDR":
+                st.subheader("The company has the Piotroski score of 2")
+                score=2
+            elif userInput== "CAFCA":
+                st.subheader("The company has the Piotroski score of 7")
+                score=7
+            elif userInput== "CBZ":
+                st.subheader("The company has the Piotroski score of 6")
+                score=6
+            elif userInput== "DLTA":
+                st.subheader("The company has the Piotroski score of 8")
+                score=8
+            elif userInput== "EDGR":
+                st.subheader("The company has the Piotroski score of 3")
+                score=3
+            elif userInput== "FBC":
+                st.subheader("The company has the Piotroski score of 4")
+                score=4
+            elif userInput== "GBZW":
+                st.subheader("The company has the Piotroski score of 1")
+                score=1
+            elif userInput== "HIPO":
+                st.subheader("The company has the Piotroski score of 7")
+                score=7
+            elif userInput== "INN":
+                st.subheader("The company has the Piotroski score of 8")
+                score=8
+            elif userInput== "LACZ":
+                st.subheader("The company has the Piotroski score of 5")
+                score=5
+            elif userInput== "MASH":
+                st.subheader("The company has the Piotroski score of 6")
+                score=6
+            elif userInput== "MSHL":
+                st.subheader("The company has the Piotroski score of 3")
+                score=3
+            elif userInput== "NPKZ":
+                st.subheader("The company has the Piotroski score of 3")
+                score=3
+            elif userInput== "RIOZ":
+                st.subheader("The company has the Piotroski score of 5")
+                score=5
+            elif userInput== "SEED":
+                st.subheader("The company has the Piotroski score of 6")
+                score=6
+            elif userInput== "SIM":
+                st.subheader("The company has the Piotroski score of 6")
+                score=6
+            elif userInput== "TANG":
+                st.subheader("The company has the Piotroski score of 7")
+                score=7
+            elif userInput== "TRUW":
+                st.subheader("The company has the Piotroski score of 3")
+                score=3
+            elif userInput== "TSL":
+                st.subheader("The company has the Piotroski score of 4")
+                score=4
+            elif userInput== "UNIF":
+                st.subheader("The company has the Piotroski score of 5")
+                score=5
+            elif userInput== "ZIMP":
+                st.subheader("The company has the Piotroski score of 3")
+                score=3
+            elif userInput== "ZIMW":
+                st.subheader("The company has the Piotroski score of 5")
+                score=5
+            elif userInput== "SACL":
+                st.subheader("The company has the Piotroski score of 3")
+                score=3
+            elif userInput== "RTG":
+                st.subheader("The company has the Piotroski score of 5")
+                score=5
+            elif userInput== "OMU":
+                st.subheader("The company has the Piotroski score of 5")
+                score=5
+            elif userInput== "NTS":
+                st.subheader("The company has the Piotroski score of 6")
+                score=6
+            elif userInput== "NTFD":
+                st.subheader("The company has the Piotroski score of 6")
+                score=6
+            elif userInput== "DZL":
+                st.subheader("The company has the Piotroski score of 5")
+                score=5
+            elif userInput== "EHZL":
+                st.subheader("The company has the Piotroski score of 6")
+                score=6
+            else:
+                st.subheader("Not enough data ")
+                score= 10
 
 ###SEntimental analysis
+            with leftC1:
         
-        url1= "https://www.fingaz.co.zw/category/c77-companies-a-markets/"
-        url2= "https://businesstimes.co.zw/category/markets/"
-        req= Request(url=url1, headers={'user-agent': 'myApp'})
-        response= urlopen(req)
-        html= bs(response, 'html.parser')
-        title= []
-        newslist=[]
-    #newsList= html.find('article')
-        newsList= html.find(id="headermenu")
-        newsdata= newsList.findAll('h6')
-        for index, row in enumerate(newsdata):
-            ti= row.a.text
-            title.append(ti)
-        data= pd.DataFrame(title, columns=['headlines'])
-        i=0
-        negative=0
-        positive=0
-        neutral=0
-        while i< len(data):
-            sentence = title[i]
-            Polarity= TextBlob(sentence).polarity
-            if Polarity== 0:
-                neutral= neutral +1
-            elif Polarity> 0:
-                positive= positive+1
+                url1= "https://www.fingaz.co.zw/category/c77-companies-a-markets/"
+                url2= "https://businesstimes.co.zw/category/markets/"
+                req= Request(url=url1, headers={'user-agent': 'myApp'})
+                response= urlopen(req)
+                html= bs(response, 'html.parser')
+                title= []
+                newslist=[]
+            #newsList= html.find('article')
+                newsList= html.find(id="headermenu")
+                newsdata= newsList.findAll('h6')
+                for index, row in enumerate(newsdata):
+                    ti= row.a.text
+                    title.append(ti)
+                data= pd.DataFrame(title, columns=['headlines'])
+                i=0
+                negative=0
+                positive=0
+                neutral=0
+                while i< len(data):
+                    sentence = title[i]
+                    Polarity= TextBlob(sentence).polarity
+                    if Polarity== 0:
+                        neutral= neutral +1
+                    elif Polarity> 0:
+                        positive= positive+1
+                    else:
+                        negative=negative+1
+                    i=i+1
+                sentiment=[positive, negative, neutral]
+                Labels= ['Positive', 'Negative', 'Neutral']
+                from matplotlib import pyplot as plt
+                fig3= plt.figure(figsize= (1,1))
+                st.subheader("some of the news headlines")
+                st.write(data.head())
+            with rightC1:
+                
+                plt.title(" sentimental analysis of news") 
+                plt.pie(sentiment, labels= Labels)
+                st.pyplot(fig3)
+            st.subheader("invest insight")
+            if positive> negative:
+                if score==10:
+                    st.write("there was not enough information to have a position on this counter ")
+                elif score>6:
+                    st.write("the general sentiments are more positive and its f-score is good it might be a great add to your portfolio in the long run  ")
+                elif score>3:
+                    st.write("its a good counter with lots of potential and with the positve aura available u may take a position")
+                else:
+                    st.write("a poorly performing counter not applicable for position trading ")
             else:
-                negative=negative+1
-            i=i+1
-        sentiment=[positive, negative, neutral]
-        Labels= ['Positive', 'Negative', 'Neutral']
-        from matplotlib import pyplot as plt
-        fig3= plt.figure(figsize= (1,1))
-        st.subheader("some of the news headlines")
-        st.write(data.head())
-        plt.title("The Results of the sentimental analysis of news") 
-        plt.pie(sentiment, labels= Labels)
-        st.pyplot(fig3)
-        if positive> negative:
-            if score==10:
-                st.write("there was not enough information to have a position on this counter ")
-            elif score>6:
-                st.write("the general sentiments are more positive and its f-score is good it might be a great add to your portfolio in the long run  ")
-            elif score>3:
-                st.write("its a good counter with lots of potential and with the positve aura available u may take a position")
-            else:
-                st.write("a poorly performing counter not applicable for position trading ")
-        else:
-            if score==10:
-                st.write("there was not enough information to have a position on this counter ")
-            elif score>6:
-                st.write("the general sentiments are more negative but its f-score is good and these counters are usualy the safer bets  ")
-            elif score>3:
-                st.write("its a good counter with lots of potential but with the negative aura available u may take a wait and see approach")
-            else:
-                st.write("a poorly performing counter not applicable for position trading ")
+                if score==10:
+                    st.write("there was not enough information to have a position on this counter ")
+                elif score>6:
+                    st.write("the general sentiments are more negative but its f-score is good and these counters are usualy the safer bets  ")
+                elif score>3:
+                    st.write("its a good counter with lots of potential but with the negative aura available u may take a wait and see approach")
+                else:
+                    st.write("a poorly performing counter not applicable for position trading ")
 
         
             #SENTIMENTAL ANALYSIS
