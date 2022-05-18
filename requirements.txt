@@ -79,7 +79,7 @@ scrapy-beautifulsoup==0.0.2
 semver==2.13.0
 sgmllib3k==1.0.0
 simplegeneric==0.8.1
-sip==4.19.13
+sip
 six==1.16.0
 smmap==5.0.0
 soupsieve==2.3.1
