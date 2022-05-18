@@ -87,7 +87,7 @@ Sphinx==4.2.0
 statsmodels==0.12.2
 streamlit==1.8.1
 tables==3.6.1
-TBB==0.2
+TBB
 terminado==0.9.4
 textblob==0.17.1
 tweepy==4.8.0
