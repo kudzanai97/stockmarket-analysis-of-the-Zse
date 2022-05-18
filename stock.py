@@ -103,7 +103,6 @@ with st.form(key="my_form",clear_on_submit= True):
             st.pyplot(fig)
         with st.container():
             leftC1, rightC1 = st.columns(2)
-            
             score= 0
             st.header('FUNDAMENTAL ANALYSIS (The Piotroski f-score)')
         
@@ -248,7 +247,7 @@ with st.form(key="my_form",clear_on_submit= True):
                 sentiment=[positive, negative, neutral]
                 Labels= ['Positive', 'Negative', 'Neutral']
                 from matplotlib import pyplot as plt
-                fig3= plt.figure(figsize= (1,1))
+                fig3= plt.figure(figsize= (2,2))
                 st.subheader("some of the news headlines")
                 st.write(data.head())
             with rightC1:
@@ -256,7 +255,7 @@ with st.form(key="my_form",clear_on_submit= True):
                 plt.title(" sentimental analysis of news") 
                 plt.pie(sentiment, labels= Labels)
                 st.pyplot(fig3)
-            st.subheader("invest insight")
+            st.subheader("Investment insight")
             if positive> negative:
                 if score==10:
                     st.write("there was not enough information to have a position on this counter ")
