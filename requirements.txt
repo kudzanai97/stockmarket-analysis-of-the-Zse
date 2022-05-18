@@ -61,7 +61,7 @@ pycosat==0.6.3
 pydeck==0.7.1
 pyls-spyder==0.4.0
 Pympler==1.0.1
-pyodbc===4.0.0-unsupported
+#pyodbc===4.0.0-unsupported
 pyreadline==2.1
 pytest==6.2.4
 python-dateutil==2.8.2
