@@ -13,7 +13,9 @@ from sklearn.linear_model import LinearRegression
 import streamlit as st
 from PIL import Image
 import re 
-import sys 
+import sys
+import tweepy 
+from tweepy import OAuthHandler 
 import warnings
 warnings.filterwarnings('ignore')
 profit= 0
@@ -23,18 +25,16 @@ svmConfidence=0
 def Techanalysis(userInput):
     with st.container():
         global prediction
+        hh= inv.stocks.get_stock_information(stock=userInput, country='zimbabwe')    
+        st.write(hh)
 
             #getting the stock data
             
         leftC, rightC = st.columns(2)
             
         try:
-            hh= inv.stocks.get_stock_information(stock=userInput, country='zimbabwe')
-            st.write(hh)
-            
-            st.write("##")
             with leftC:
-                    
+                
                 infor= inv.get_stock_company_profile(stock=userInput, country="Zimbabwe")
                 df = inv.get_stock_historical_data(stock=userInput,
                                                 country="Zimbabwe",
@@ -53,7 +53,7 @@ def Techanalysis(userInput):
                     #st.write("##")
                 st.write(infor)
             with rightC:
-                
+                #st.write(hh)
                 st.header("Stock historical data")
                 st.write(df.head())
         
@@ -102,7 +102,7 @@ def Techanalysis(userInput):
             #st.pyplot(fig)
     return(prediction)
 def Stockposition():
-    st.subheader("Stock insight")
+    
     #prediction=x
     #score=y
     if score==10:
@@ -118,10 +118,11 @@ def Stockposition():
         else:
             st.header("a poorly performing counter not applicable for position trading ")
     else:
-        st.header("not a vauable counter best to avoid for now even though it might earn in the short term")
+        st.header("not a valuable counter best to avoid for now even though it might earn in the short term")
 
     st.subheader("Forecasted stock trend")
     #st.write('a confidence level' ,svmConfidence)
+    res= str(score)
     fig =plt.figure(figsize=(12,6))
     plt.plot(prediction, 'r', label='predicted price')
     plt.xlabel('time')
@@ -131,8 +132,8 @@ def Stockposition():
     st.header('FUNDAMENTAL ANALYSIS (The Piotroski f-score)')
     st.write("##")
     st.write("The Piotroski score is a discrete score between zero and nine that reflects nine criteria used to determine the strength of a firm's financial position. The Piotroski score is used to determine the best value stocks, with nine being the best and zero being the worst")
-    st.write("this company has a Piotroski score of",score)
-
+    st.write("this company has a Piotroski score of",res)
+    #st.write(score)
     return
 
 
@@ -310,18 +311,20 @@ def SentimentalAnalysis():
     st.pyplot(fig3)
     return
 st.set_page_config(page_title="Tanaka neMusika", page_icon=":tada:", layout="wide")
-st.title("  STOCK MARKET PREDICTION-ZSE ")
+st.title("STOCK MARKET PREDICTION-ZSE  ")
 #st.write("it will end in wealth")
 image = Image.open('zse.jpg')
 st.image(image, caption='',use_column_width='always')
 st.write("")
 st.sidebar.title('ZSE listed companies')
 st.write("The Zimbabwe Stock Exchange (ZSE) is the sole, official stock exchange of Zimbabwe, bringing together companies looking for long-term capital and investors looking for profitable investment opportunities. The ZSE maintains several indices including the Mining Index, Industrial Index, and the benchmark All Share Index. Since August 2009, sale of listed securities on the ZSE has been subject to 1% withholding tax on the gross, however, exempt from the general capital gains tax of 20%. Additionally, both resident and non-resident shareholders are liable to 10% special tax on dividends earned from companies listed on the ZSE, which is 500 basis points below the general rate of 15% on unlisted companies. Barclays Bank and Stanbic Bank of Zimbabwe offer custodial services to both local and foreign investors.")
+userInput= ""
 with st.sidebar:
     with st.form(key="my_form",clear_on_submit= True):
         userInput= st.text_input("enter stock ticker eg ECO")
         submit_button= st.form_submit_button("enter")
-userInput= ""
+    
+
 button1= st.sidebar.button("African Distillers")
 button2= st.sidebar.button("African Sun")
 button3= st.sidebar.button("British American Tobaco Zimbabwe")
@@ -594,13 +597,15 @@ if button34:
     Stockposition()
     SentimentalAnalysis()
     #/html/body/div/div/div/main/article/div[8]
-
-#/html/body/div/div/div/main/article/div[4]/table[1]/thead/tr/th
 if submit_button:
     Techanalysis(userInput)
     FundamentalAnalysis(userInput)
     Stockposition()
     SentimentalAnalysis()
+
+
+#/html/body/div/div/div/main/article/div[4]/table[1]/thead/tr/th
+
 
 
 
