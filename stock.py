@@ -31,6 +31,7 @@ def Techanalysis(userInput):
         try:
             hh= inv.stocks.get_stock_information(stock=userInput, country='zimbabwe')
             st.write(hh)
+            
             st.write("##")
             with leftC:
                     
