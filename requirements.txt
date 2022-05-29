@@ -40,14 +40,12 @@ mkl-service==2.4.0
 mpmath==1.2.1
 munkres==1.1.4
 mypy-extensions==0.4.3
-navigator-updater==0.2.1
 nltk==3.6.5
 oauthlib==3.2.0
 opencv-python==4.5.1.48
 pandas==1.4.1
 pathspec==0.7.0
 patsy==0.5.2
-pdf2image==1.16.0
 pep8==1.7.1
 Pillow==8.2.0
 pkginfo==1.7.1
@@ -87,7 +85,6 @@ tables==3.6.1
 TBB==0.2
 terminado==0.9.4
 textblob==0.17.1
-tweepy==4.8.0
 tzdata==2022.1
 tzlocal==4.2
 unicodecsv==0.14.1
