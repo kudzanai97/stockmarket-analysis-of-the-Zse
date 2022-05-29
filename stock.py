@@ -309,14 +309,17 @@ def SentimentalAnalysis():
     st.pyplot(fig3)
     return
 st.set_page_config(page_title="Tanaka neMusika", page_icon=":tada:", layout="wide")
-st.title("Tanaka's ZSE stock forecaster  ")
+st.title("  STOCK MARKET PREDICTION-ZSE ")
 #st.write("it will end in wealth")
 image = Image.open('zse.jpg')
 st.image(image, caption='',use_column_width='always')
 st.write("")
 st.sidebar.title('ZSE listed companies')
 st.write("The Zimbabwe Stock Exchange (ZSE) is the sole, official stock exchange of Zimbabwe, bringing together companies looking for long-term capital and investors looking for profitable investment opportunities. The ZSE maintains several indices including the Mining Index, Industrial Index, and the benchmark All Share Index. Since August 2009, sale of listed securities on the ZSE has been subject to 1% withholding tax on the gross, however, exempt from the general capital gains tax of 20%. Additionally, both resident and non-resident shareholders are liable to 10% special tax on dividends earned from companies listed on the ZSE, which is 500 basis points below the general rate of 15% on unlisted companies. Barclays Bank and Stanbic Bank of Zimbabwe offer custodial services to both local and foreign investors.")
-
+with st.sidebar:
+    with st.form(key="my_form",clear_on_submit= True):
+        userInput= st.text_input("enter stock ticker eg ECO")
+        submit_button= st.form_submit_button("enter")
 userInput= ""
 button1= st.sidebar.button("African Distillers")
 button2= st.sidebar.button("African Sun")
@@ -592,7 +595,11 @@ if button34:
     #/html/body/div/div/div/main/article/div[8]
 
 #/html/body/div/div/div/main/article/div[4]/table[1]/thead/tr/th
-
+if submit_button:
+    Techanalysis(userInput)
+    FundamentalAnalysis(userInput)
+    Stockposition()
+    SentimentalAnalysis()
 
 
 
