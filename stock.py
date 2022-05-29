@@ -29,8 +29,10 @@ def Techanalysis(userInput):
         leftC, rightC = st.columns(2)
             
         try:
+            hh= inv.stocks.get_stock_information(stock=userInput, country='zimbabwe')
+            st.write(hh)
             with leftC:
-                hh= inv.stocks.get_stock_information(stock=userInput, country='zimbabwe')    
+                    
                 infor= inv.get_stock_company_profile(stock=userInput, country="Zimbabwe")
                 df = inv.get_stock_historical_data(stock=userInput,
                                                 country="Zimbabwe",
@@ -49,7 +51,7 @@ def Techanalysis(userInput):
                     #st.write("##")
                 st.write(infor)
             with rightC:
-                st.write(hh)
+                
                 st.header("Stock historical data")
                 st.write(df.head())
         
