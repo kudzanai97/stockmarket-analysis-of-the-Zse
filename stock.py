@@ -35,7 +35,7 @@ def Techanalysis(userInput):
                 df = inv.get_stock_historical_data(stock=userInput,
                                                 country="Zimbabwe",
                                                 from_date="01/01/2019",
-                                                to_date="05/05/2022")
+                                                to_date="30/05/2022")
 
                     
                 ku = inv.get_stock_historical_data(stock=userInput,
@@ -98,7 +98,7 @@ def Techanalysis(userInput):
             #st.pyplot(fig)
     return(prediction)
 def Stockposition():
-    
+    st.subheader("Stock insight")
     #prediction=x
     #score=y
     if score==10:
