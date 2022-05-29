@@ -13,9 +13,7 @@ from sklearn.linear_model import LinearRegression
 import streamlit as st
 from PIL import Image
 import re 
-import sys
-import tweepy 
-from tweepy import OAuthHandler 
+import sys 
 import warnings
 warnings.filterwarnings('ignore')
 profit= 0
